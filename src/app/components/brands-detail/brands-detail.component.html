@@ -1,0 +1,23 @@
+<table class="table">
+    <thead class="table-info">
+        <tr>
+            <th scope="col">Araç ID</th>
+            <th scope="col">Marka</th>
+            <th scope="col"><button class="btn btn-success" click="routerLink" routerLink="add">Marka Ekle</button></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let brand of brands">
+            <th scope="row">{{brand.brandId}}</th>
+            <td>{{brand.brandName}}</td>
+            <td>
+                <button class="btn btn-warning" routerLink="update/{{brand.brandId}}">
+                    <i class="fa fa-edit"></i> Düzenle
+                </button>
+                <button class="btn btn-danger mx-2" routerLink="delete/{{brand.brandId}}">
+                    <i class="fa fa-trash"></i> Sil
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

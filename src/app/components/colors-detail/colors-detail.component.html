@@ -1,0 +1,23 @@
+<table class="table">
+    <thead class="table-info">
+        <tr>
+            <th scope="col">Renk Id</th>
+            <th scope="col">Renk</th>
+            <th scope="col"><button class="btn btn-success" click="routerLink" routerLink="add">Renk Ekle</button></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let color of colors">
+            <th scope="row">{{color.colorId}}</th>
+            <td>{{color.colorName}}</td>
+            <td>
+                <button class="btn btn-warning" routerLink="update/{{color.colorId}}">
+                    <i class="fa fa-edit"></i> Düzenle
+                </button>
+                <button class="btn btn-danger mx-2" routerLink="delete/{{color.colorId}}">
+                    <i class="fa fa-trash"></i> Sil
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
