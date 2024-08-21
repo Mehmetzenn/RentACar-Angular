@@ -1,0 +1,29 @@
+<body class="text-center">
+    <main class="form-signin w-100 m-auto">
+        <form [formGroup]="registerForm" class="rounded shadow-lg p-4 bg-light">
+            <h1 class="h3 mb-3 fw-normal">Kayıt Ol</h1><br>
+
+            <div class="form-floating mb-3">
+                <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">E-posta </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Parola</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input formControlName="firstName" type="text" class="form-control" id="firstName" placeholder="First Name">
+                <label for="firstName">İsim </label>
+            </div>
+            <div class="form-floating mb-3">
+                <input formControlName="lastName" type="text" class="form-control" id="lastName" placeholder="Last Name">
+                <label for="lastName">Soyisim</label>
+            </div>
+
+            <button class="btn btn-primary w-100 py-2" type="submit" (click)="register()">Kaydol</button>
+        </form>
+    </main>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>

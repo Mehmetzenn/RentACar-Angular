@@ -19,6 +19,7 @@ export class CarUpdateComponent implements OnInit {
   brands: Brand[] = [];
   colors: Color[] = [];
   cars: Car[] = [];
+  id:number
   
 
   constructor(
@@ -34,17 +35,18 @@ export class CarUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       if (params['carId']) {
-        this.getCarsById(params['carId']);
+        this.id = params['carId']; // Store the carId in the id property
+        this.getCarsById(this.id);
         this.getBrands();
         this.getColors();
         this.createCarForm();        
       }
     });
   }
-
+  
   createCarForm() {
     this.carUpdateForm = this.formBuilder.group({
-      id: ['', Validators.required],
+      id: [{ value: this.id, disabled: true }, Validators.required], // Set the id field with the route parameter value
       brandId: ['', Validators.required],
       colorId: ['', Validators.required],
       modelYear: ['', Validators.required],
@@ -53,7 +55,6 @@ export class CarUpdateComponent implements OnInit {
       carDescription: ['', Validators.required],
     });
   }
-
   update() {
     if (this.carUpdateForm.valid) {
       let carModel = Object.assign({}, this.carUpdateForm.value);
@@ -77,7 +78,7 @@ export class CarUpdateComponent implements OnInit {
 
   getCarsById(carId: number) {
     this.carService.getCarsById(carId).subscribe((response) => {
-      this.cars = response.data;        
+      this.cars = response.data;  
     });
   }
 

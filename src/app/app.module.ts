@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule} from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -34,6 +34,11 @@ import { BrandUpdateComponent } from './components/brand-update/brand-update.com
 import { ColorsDetailComponent } from './components/colors-detail/colors-detail.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
 import { ColorUpdateComponent } from './components/color-update/color-update.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterComponent } from './components/register/register.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProfilComponent } from './components/profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +65,11 @@ import { ColorUpdateComponent } from './components/color-update/color-update.com
     BrandUpdateComponent,
     ColorsDetailComponent,
     ColorAddComponent,
-    ColorUpdateComponent
+    ColorUpdateComponent,
+    LoginComponent,
+    RegisterComponent,
+    FooterComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +82,9 @@ import { ColorUpdateComponent } from './components/color-update/color-update.com
       positionClass:"toast-bottom-right"
     })
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

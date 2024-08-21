@@ -1,0 +1,21 @@
+/* Add some margin between the buttons */
+.navbar .btn {
+    margin-left: 10px;
+}
+
+/* Adjust the padding for a better look */
+.navbar .btn-outline-success, .navbar .btn-outline-warning {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+/* Optional: Add some hover effects */
+.navbar .btn-outline-success:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.navbar .btn-outline-warning:hover {
+    background-color: #ffc107;
+    color: #fff;
+}

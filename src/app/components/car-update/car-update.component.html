@@ -7,6 +7,12 @@
         <div class="card-body">
           <form [formGroup]="carUpdateForm">
             <div class="mb-3">
+              <label for="id">Id</label>
+              <div class="form-group">
+                <input type="number" id="id" formControlName="id" class="form-control" placeholder="id"/>
+              </div>
+            </div>
+            <div class="mb-3">
               <label for="carName">Araç Adı</label>
               <div class="form-group">
                 <input type="text" id="carName" formControlName="carName" class="form-control" placeholder="Araç Adı"/>
