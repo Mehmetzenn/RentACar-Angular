@@ -39,6 +39,9 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterComponent } from './components/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { RentalUpdateComponent } from './components/rental-update/rental-update.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,10 @@ import { ProfilComponent } from './components/profil/profil.component';
     LoginComponent,
     RegisterComponent,
     FooterComponent,
-    ProfilComponent
+    ProfilComponent,
+    HomePageComponent,
+    ContactComponent,
+    RentalUpdateComponent
   ],
   imports: [
     BrowserModule,

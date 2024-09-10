@@ -1,0 +1,51 @@
+/* Konteyner ve genel stil ayarları */
+.container {
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+}
+
+/* Form ve etiket stil ayarları */
+.form-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #495057; /* Koyu gri */
+}
+
+/* Form-select için stil ayarları */
+.form-select {
+    border-radius: 0.5rem;
+    border: 1px solid #ced4da; /* Gri border */
+    background-color: #fff; /* Beyaz arka plan */
+    padding: 0.75rem; /* İç boşluk */
+    font-size: 1rem; /* Yazı boyutu */
+    color: #495057; /* Koyu gri yazı rengi */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-select:focus {
+    border-color: #007bff; /* Mavi border renk */
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Hafif mavi gölge */
+}
+
+/* Filtreleme düğmeleri stil ayarları */
+button {
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    border: none;
+    color: #fff; /* Beyaz yazı rengi */
+    transition: background-color 0.3s ease;
+}
+
+.btn-warning {
+    background-color: #6c757d; /* Orta gri arka plan */
+}
+
+.btn-warning:hover {
+    background-color: #5a6268; /* Daha koyu gri hover efekti */
+}
+
+/* Butonlar arasında boşluk */
+.btn-space {
+    margin-left: 1rem; /* Butonlar arasında boşluk */
+}

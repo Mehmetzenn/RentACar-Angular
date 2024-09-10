@@ -1,0 +1,28 @@
+.car-images-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 1rem; 
+    padding: 2%; 
+}
+
+.car-image {
+    border-radius: 0.5rem; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+    object-fit: cover; 
+    width: 100%; 
+    height: 200px; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.car-image:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+}
+
+
+.no-images-message {
+    text-align: center; 
+    color: #495057; 
+    font-size: 1.2rem; 
+    padding: 2%; 
+}

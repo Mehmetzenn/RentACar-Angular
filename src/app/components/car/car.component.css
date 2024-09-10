@@ -1,0 +1,102 @@
+/* Genel stil ayarları */
+body {
+    background-color: #f8f9fa; /* Hafif gri arka plan */
+    color: #495057; /* Koyu gri yazı rengi */
+}
+
+/* Yükleniyor spinner stili */
+.spinner-border {
+    border-color: #dee2e6; /* Açık gri */
+}
+
+/* Arama kutusu ve etiket stil ayarları */
+.form-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #495057; /* Koyu gri */
+}
+
+.form-control {
+    border-radius: 0.5rem;
+    border-color: #ced4da; /* Gri border */
+    background-color: #fff; /* Beyaz arka plan */
+}
+
+/* Uyarı mesajı stili */
+.alert-warning {
+    background-color: #e9ecef; /* Açık gri arka plan */
+    color: #212529; /* Koyu gri yazı rengi */
+    border-color: #ced4da; /* Gri border */
+}
+
+/* Kart ve kart içeriği stil ayarları */
+.card {
+    border: 1px solid #ced4da; /* Gri border */
+    border-radius: 0.5rem;
+    background-color: #fff; /* Beyaz arka plan */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    transition: transform 0.3s, box-shadow 0.3s; /* Geçiş efektleri */
+}
+
+.card-body {
+    background-color: #f8f9fa; /* Hafif gri arka plan */
+    padding: 1.5rem; /* Daha geniş iç padding */
+}
+
+.card-title {
+    font-size: 1.25rem; /* Başlık boyutu */
+    font-weight: 600; /* Orta kalınlıkta yazı */
+    color: #333; /* Koyu gri yazı rengi */
+}
+
+.card-text {
+    color: #666; /* Açık gri yazı rengi */
+}
+
+/* Araç kartı stili */
+.car-card {
+    border: 1px solid #ddd; /* Hafif gri kenarlık */
+    border-radius: 0.5rem; /* Köşe yuvarlama */
+}
+
+.car-card:hover {
+    transform: translateY(-10px); /* Yüksekliğe kaldırma efekti */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Daha belirgin gölge */
+}
+
+/* Düğme stili */
+.btn-primary {
+    background-color: #007bff; /* Mavi arka plan */
+    border-color: #007bff; /* Mavi kenarlık */
+    color: #fff; /* Beyaz yazı rengi */
+    transition: background-color 0.3s, border-color 0.3s; /* Geçiş efektleri */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Daha koyu mavi hover arka plan */
+    border-color: #0056b3; /* Daha koyu mavi hover kenarlık */
+}
+
+.btn-warning {
+    background-color: #6c757d; /* Orta gri arka plan */
+    border: none;
+    color: #fff; /* Beyaz yazı rengi */
+    transition: background-color 0.3s; /* Geçiş efekti */
+}
+
+.btn-warning:hover {
+    background-color: #5a6268; /* Daha koyu gri hover efekti */
+}
+
+/* Responsive tasarım */
+@media (min-width: 768px) {
+    .row-cols-md-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .row-cols-lg-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

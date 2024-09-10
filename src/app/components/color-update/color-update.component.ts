@@ -33,7 +33,7 @@ export class ColorUpdateComponent implements OnInit {
   }
   getColorById(colorId:number)
   {
-    this.colorService.getByColorId(this.colorId).subscribe(response=>{
+    this.colorService.getByColorId(colorId).subscribe(response=>{
       this.colors=response.data;
       this.dataLoaded=true
     })

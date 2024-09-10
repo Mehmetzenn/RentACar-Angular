@@ -1,21 +1,100 @@
-/* Add some margin between the buttons */
-.navbar .btn {
-    margin-left: 10px;
+
+.navbar {
+  border-bottom: 1px solid #dee2e6;
 }
 
-/* Adjust the padding for a better look */
-.navbar .btn-outline-success, .navbar .btn-outline-warning {
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+.navbar-light .navbar-brand {
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-/* Optional: Add some hover effects */
-.navbar .btn-outline-success:hover {
-    background-color: #28a745;
-    color: #fff;
+.navbar-light .navbar-brand:hover {
+  color: #0056b3; 
 }
 
-.navbar .btn-outline-warning:hover {
-    background-color: #ffc107;
-    color: #fff;
+
+.navbar-light .navbar-nav .nav-link {
+  color: #495057;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #007bff;
+  background-color: rgba(0, 123, 255, 0.1); 
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: #007bff;
+}
+
+
+.dropdown-menu {
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+.dropdown-item {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.dropdown-item:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+
+.btn-outline-dark {
+  color: #495057;
+  border-color: #495057;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+
+.btn-outline-primary {
+  color: #007bff;
+  border-color: #007bff;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.submenu-right {
+  right: 0; 
+}
+
+.dropdown-submenu:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+}
+
+
+.dropdown-submenu .dropdown-item:hover {
+  background-color: #007bff;
+  color: white;
 }

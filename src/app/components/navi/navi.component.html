@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold text-warning" href="">Ana Sayfa</a>
+    <a class="navbar-brand fw-bold text-primary" href="#">RentACar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,82 +8,47 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active fw-semibold text-dark" aria-current="page" href="cars">Home</a>
+          <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-home me-1"></i>Anasayfa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-semibold text-dark" href="cars">Link</a>
-        </li>
+          <a class="nav-link" routerLink="/cars"><i class="fa fa-car me-1"></i>Araçlar</a>
+        </li>        
         <li class="nav-item">
-          <a class="nav-link disabled text-muted" aria-disabled="true">Disabled</a>
+          <a class="nav-link" routerLink="/contact"><i class="fa fa-envelope me-1"></i>İletişim</a>
         </li>
       </ul>
       <form class="d-flex align-items-center" role="search">
         <div class="dropdown">
-          <button *ngIf="checkToLogin()" class="btn btn-outline-warning dropdown-toggle" type="button"
+          <button *ngIf="checkToLogin()" class="btn btn-outline-dark dropdown-toggle" type="button"
             id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="bi bi-person-circle me-2"></i>{{ loggedInUsername }}
           </button>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" href="#" routerLink="/profil">Profil Bilgileri</a></li>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Yönetim</a>
+              <ul class="dropdown-menu submenu-right">
+                <li><a class="dropdown-item" href="#" routerLink="/cars/list">Araç Yönetimi</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/brands/list">Marka Yönetimi</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/colors/list">Renk Yönetimi</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/rental">Kiralama Listesi</a></li>
+              </ul>
+            </li>
             <li><a class="dropdown-item text-danger" href="#" (click)="logout()">Çıkış Yap</a></li>
           </ul>
+          
+          
 
-          <button *ngIf="!checkToLogin()" class="btn btn-outline-primary" type="button"
+          <button *ngIf="!checkToLogin()" routerLink="login" class="btn btn-outline-primary" type="button"
             id="loginButton">
-            Giriş Yap
+            Giriş Yap 
+          </button>&nbsp;
+          <button *ngIf="!checkToLogin()" routerLink="register" class="btn btn-outline-primary" type="button"
+            id="registerButton">
+            Kaydol
           </button>
-          <ul *ngIf="!checkToLogin()" class="dropdown-menu dropdown-menu-end" aria-labelledby="loginButton">
-            <li><a class="dropdown-item" href="login">Giriş Yap</a></li>
-            <li><a class="dropdown-item" href="register">Kayıt Ol</a></li>
-          </ul>
         </div>
       </form>
     </div>
   </div>
 </nav>
-
-
-<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="">Ana Sayfa</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="cars">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cars">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <div class="dropdown">
-          <button *ngIf="checkToLogin()" class="btn btn-outline-success dropdown-toggle" type="button"
-            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-            {{ loggedInUsername }}
-
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#" routerLink="/profil">Kullanıcı Sayfası</a></li>
-            <li><a class="dropdown-item" href="#" (click)="logout()">Çıkış Yap</a></li>
-          </ul>
-
-          <button *ngIf="!checkToLogin()" class="btn btn-outline-success dropdown-toggle" type="button"
-            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-            Giriş Yap
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="login">Giriş Yap</a></li>
-            <li><a class="dropdown-item" href="register">Kayıt Ol</a></li>
-          </ul>
-        </div>
-      </form>
-    </div>
-  </div>
-</nav> -->

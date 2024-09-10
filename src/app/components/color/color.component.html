@@ -1,11 +1,12 @@
-<ul class="list-group" style="margin-top: 5%;" >
-    <li class="list-group-item list-group-item-action list-group-item-warning" (click)="clearCurrentColor()" routerLink="cars" >Tüm Renkler</li>
+<ul class="list-group" style="margin-top: 5%;">
+  <li class="list-group-item list-group-item-action list-group-item-dark" (click)="clearCurrentColor()" routerLink="cars">Tüm Renkler</li>
 
-    <div class="mb-3">
-      <label for="filterText" class="form-label" style="padding-top: 2%;" >Renk Ara</label>
-      <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
-    </div>
+  <div class="mb-3">
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Renk Ara">
+  </div>
 
-    <li (click)="setCurrentColor(color)" 
-    *ngFor="let color of colors |filterColor:filterText" [class]="getCurrentColorClass(color)" routerLink="cars/color/{{color.colorId}}" >{{color.colorName}}</li>
-  </ul>
+  <li (click)="setCurrentColor(color)" 
+  *ngFor="let color of colors | filterColor: filterText" [class]="getCurrentColorClass(color)" routerLink="cars/color/{{color.colorId}}">
+      {{color.colorName}}
+  </li>
+</ul>

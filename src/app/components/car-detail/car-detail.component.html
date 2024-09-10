@@ -1,24 +1,31 @@
-<div *ngIf="dataLoaded" style="margin: 10%; text-align: center;">
-  <img *ngIf="selectedCarDetail?.imagePath" style="width: 50%; height: 50%;" [src]="baseUrl + selectedCarDetail.imagePath" alt="Car Image">
-  <div style="padding-top: 5%;" class="card-body">
-    <h3 class="card-title">Araba: {{selectedCarDetail.carName}}</h3><br>
-    <p class="card-title"><strong>{{selectedCarDetail.brandName}}</strong> Marka</p><br>
-    <p class="card-title"><strong>{{selectedCarDetail.colorName}}</strong> Renk</p><br>
-    <p class="card-title"><strong>{{selectedCarDetail.modelYear}}</strong> Model</p><br>
-    <p class="card-title"><strong>{{selectedCarDetail.dailyPrice}}</strong> Günlük Fiyat</p><br>
-    <p class="card-title">{{selectedCarDetail.carDescription}}</p><br>
-    <div class="form-group">
-      <label for="rentDate">Kiralama Tarihi:</label>
-      <input type="date" class="form-control" [(ngModel)]="rentDate" name="rentDate" />
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-3">
+      <app-brand></app-brand>
+      <app-color></app-color>
     </div>
-    <div class="form-group">
-      <label for="returnDate">Dönüş Tarihi:</label>
-      <input type="date" class="form-control" [(ngModel)]="returnDate" name="returnDate" />
+    <div class="col-md-9">
+      <div *ngIf="dataLoaded" class="car-details text-center">
+        <h2 class="page-title">Araç Detayları</h2>
+        <img *ngIf="selectedCarDetail?.imagePath" [src]="baseUrl + selectedCarDetail.imagePath" alt="Car Image" class="car-image">
+        <div class="card-body">
+          <h3 class="card-title">{{selectedCarDetail.carName}}</h3>
+          <p class="card-subtitle"><strong>{{selectedCarDetail.brandName}}</strong> Marka</p>
+          <p class="card-subtitle"><strong>{{selectedCarDetail.colorName}}</strong> Renk</p>
+          <p class="card-subtitle"><strong>{{selectedCarDetail.modelYear}}</strong> Model</p>
+          <p class="card-subtitle"><strong>{{selectedCarDetail.dailyPrice}}</strong> Günlük Fiyat</p>
+          <p class="card-description">{{selectedCarDetail.carDescription}}</p>
+          <div class="form-group">
+            <label for="rentDate">Kiralama Tarihi:</label>
+            <input type="date" class="form-control" [(ngModel)]="rentDate" name="rentDate" />
+          </div>
+          <br>
+          <button type="button" class="btn btn-primary" (click)="add()">
+            Aracı Şimdi Kirala
+          </button>
+        </div>
+      </div>
     </div>
-    <br>
-    <button type="button" class="btn btn-warning" routerLink="/pay"  >
-      Aracı Şimdi Kirala 
-    </button>
   </div>
 </div>
 

@@ -1,0 +1,57 @@
+/* Sayfa Başlığı */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 2rem;
+  }
+  
+  /* Araç Resmi */
+  .car-image {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  /* Kart İçeriği */
+  .card-body {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Başlık ve Açıklama Stilleri */
+  .card-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #495057;
+  }
+  
+  .card-subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+  
+  .card-description {
+    font-size: 1rem;
+    color: #495057;
+    margin: 1rem 0;
+  }
+  
+  /* Buton Stili */
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease;
+  }
+  

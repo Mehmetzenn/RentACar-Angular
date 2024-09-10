@@ -1,0 +1,48 @@
+.active-status {
+    color: green;
+    font-weight: bold;
+  }
+  .card {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  .card-header {
+    border-bottom: 0;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem;
+  }
+  
+  .card-body {
+    padding: 2rem;
+  }
+  
+  .img-fluid {
+    border: 4px solid #0056b3; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .badge {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+  }
+  
+  .badge-success {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .badge-danger {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .text-muted {
+    color: #6c757d;
+  }
+  
+  .font-weight-bold {
+    font-weight: 700;
+  }
+  

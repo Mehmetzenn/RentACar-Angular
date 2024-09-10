@@ -1,20 +1,26 @@
 <table class="table">
-    <thead>
+    <thead class="table-info">
         <tr>
-            <td>Id</td>
-            <td>Müşteri</td>
-            <td>Araba</td>
-            <td>Alış Tarihi</td>
-            <td>Dönüş Tarihi</td>
+            <th scope="col">Id</th>
+            <th scope="col">Kullanıcı</th>
+            <th scope="col">Araç Adı</th>
+            <th scope="col">Kiralama Tarihi</th>
+            <th scope="col">Dönüş Tarihi</th>
+            <th scope="col"></th>
         </tr>
     </thead>
-    <thead>
+    <tbody>
         <tr *ngFor="let rental of rentals">
-            <td>{{rental.id}}</td>
+            <th scope="row">{{rental.id}}</th>
             <td>{{rental.customerName}}</td>
             <td>{{rental.carName}}</td>
             <td>{{rental.rentDate}}</td>
             <td>{{rental.returnDate}}</td>
+            <td>
+                <button class="btn btn-warning" routerLink="{{rental.id}}">
+                    <i class="fa fa-edit"></i> Düzenle
+                </button>   
+            </td>
         </tr>
-    </thead>
+    </tbody>
 </table>

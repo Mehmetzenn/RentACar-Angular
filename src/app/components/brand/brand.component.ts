@@ -2,6 +2,7 @@ import { filter } from 'rxjs';
 import { Brand } from './../../models/brand';
 import { Component, OnInit } from '@angular/core';
 import { BrandService } from 'src/app/services/brand.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-brand',
@@ -12,7 +13,7 @@ export class BrandComponent implements OnInit{
   brands:Brand[]=[];
   currentBrand?:Brand;
   filterText:""
-  constructor(private brandService:BrandService){}
+  constructor(private brandService:BrandService, private router: Router){}
   
 
 
@@ -28,6 +29,7 @@ export class BrandComponent implements OnInit{
 
   setCurrentBrand(brand:Brand){
     this.currentBrand=brand;
+    this.router.navigate(['/cars/brand', brand.brandId]);
   }
   getCurrentBrandClass(brand:Brand){
     if (brand==this.currentBrand) {
@@ -50,5 +52,6 @@ export class BrandComponent implements OnInit{
 
   clearCurrentBrand(){
     this.currentBrand = undefined;
+    this.router.navigate(['/cars']);
   }
 }

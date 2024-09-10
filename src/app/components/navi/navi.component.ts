@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth.service';
-import { LocaleStorageService } from 'src/app/services/local-storage.service';
-
-import { UserService } from 'src/app/services/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-navi',
@@ -14,49 +8,35 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./navi.component.css'],
 })
 export class NaviComponent implements OnInit {
-  userLoggedIn: boolean = false;
-  key:string
-  user: User;
-  firstName:string;
-  lastName:string;
-  isAuthenticated:boolean;
-  loggedInUsername: string ;
-  
-  constructor(private formBuilder:FormBuilder, private authService:AuthService, 
-    private toastrService:ToastrService, private localStorage:LocaleStorageService)
-  {
-  
-  }
-  logout():void{
-    this.authService.logout();
-    this.loggedInUsername="";
-    window.location.reload();
-  }
+  loggedInUsername: string = '';
+  isAuthenticated: boolean = false;
 
+  constructor(private authService: AuthService, private toastrService: ToastrService) {}
 
   ngOnInit(): void {
     this.checkToLogin();
-   // throw new Error('Method not implemented.');
+    // this.checkToLogin2();
   }
+
+  // Kullanıcı giriş yapmış mı kontrol eder
+  // checkToLogin(): void {
+  //   this.isAuthenticated = this.authService.isAuthanticated();
+  //   if (this.isAuthenticated) {
+  //     this.loggedInUsername = this.authService.getUserName(); // Kullanıcının ismini alıyoruz
+  //   }
+  // }
+
+  // Çıkış işlemi
+  logout(): void {
+    this.authService.logout();
+    this.toastrService.info('Çıkış yapıldı.');
+    this.loggedInUsername = '';
+    window.location.reload();
+  }
+
   checkToLogin():boolean
   {
   this.loggedInUsername=this.authService.getUserName();
   return !!this.loggedInUsername;
   }
- /* checkToLogin() {
-    if (this.authService.isAuthanticated()) {
-      return true;
-    } else {
-      return false;
-    }
-  }*/
-  setUserLoggedIn() {
-    this.userLoggedIn = this.authService.isAuthanticated();
-  }
-/*logOut(){
-  this.localStorage.remove()
-}*/
-
-
-
 }

@@ -1,0 +1,66 @@
+/* Liste genel stil ayarları */
+.list-group {
+    border-radius: 0.75rem;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Liste öğesi stili */
+  .list-group-item {
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 2px solid transparent; /* İlk başta görünmeyen border */
+  }
+  
+  /* Liste öğesi üzerine gelindiğinde arka plan ve yazı rengi değişir */
+  .list-group-item:hover {
+    background-color: #e9ecef;
+    color: #212529;
+  }
+  
+  /* Ana renkli liste öğesi (Tüm Renkler) */
+  .list-group-item-main {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: 600;
+    border: 2px solid #0056b3; /* Daha koyu mavi border */
+  }
+  
+  /* Renkli liste öğeleri için dinamik sınırlar */
+  .list-group-item[data-color="red"] {
+    border: 2px solid #f8d7da;
+  }
+  
+  .list-group-item[data-color="blue"] {
+    border: 2px solid #d1ecf1;
+  }
+  
+  .list-group-item[data-color="green"] {
+    border: 2px solid #d4edda;
+  }
+  
+  /* Arama kutusu stil ayarları */
+  .form-control {
+    margin-top: 4%;
+    border-radius: 0.5rem;
+    border-color: #ced4da;
+    padding: 0.75rem;
+    box-shadow: none;
+  }
+  
+  /* Etiketler için stil */
+  .form-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #495057;
+  }
+  
+  /* Seçili renkli liste öğesi */
+  .list-group-item.selected {
+    background-color: #e9ecef;
+    color: #212529;
+  }
+  

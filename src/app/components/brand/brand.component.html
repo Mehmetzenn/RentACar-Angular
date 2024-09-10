@@ -1,14 +1,12 @@
-<ul class="list-group" style="margin-top: 2%;">
-    <li  class="list-group-item list-group-item-action list-group-item-warning"  (click)="clearCurrentBrand()" routerLink="cars">Tüm Markalar</li>
+<ul class="list-group" style="margin-top: 5%;">
+  <li class="list-group-item list-group-item-action list-group-item-dark" (click)="clearCurrentBrand()" routerLink="cars">Tüm Markalar</li>
 
-    <div class="mb-3">
-      <label for="filterText" class="form-label" style="padding-top: 2%;" >Renk Ara</label>
-      <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
-    </div>
+  <div class="mb-3">
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Marka Ara">
+  </div>
 
-    <li *ngFor="let brand of brands | filterBrand:filterText"
-    (click)="setCurrentBrand(brand)" 
-    [class]="getCurrentBrandClass(brand)"
-    routerLink="/cars/brand/{{brand.brandId}}" > {{brand.brandName}}</li>
-  
-  </ul>
+  <li (click)="setCurrentBrand(brand)" 
+  *ngFor="let brand of brands | filterBrand: filterText" [class]="getCurrentBrandClass(brand)">
+      {{brand.brandName}}
+  </li>
+</ul>

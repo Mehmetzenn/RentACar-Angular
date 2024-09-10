@@ -1,5 +1,5 @@
 .footer-container {
-    background-color: #343a40; 
+    background-color: #495057; 
     padding: 20px 0;
   }
   
@@ -9,31 +9,31 @@
   }
 footer{
     margin-top: 7%;
-    background: linear-gradient(135deg, #333333, #111111);
+    background: linear-gradient(135deg, #495057, #111111);
     color: white;
     padding-top: 4rem;
     padding-bottom: 2rem;
 }
-/* İletişim linklerinin altındaki çizgiyi kaldır */
+
 footer .col-md-3 ul li a {
-    text-decoration: none; /* Alt çizgiyi kaldır */
-    color: white; /* Renk beyaz kalsın */
+    text-decoration: none; 
+    color: white; 
 }
 
-/* Linklere hover durumunda alt çizgi eklemek için */
+
 footer .col-md-3 ul li a:hover {
-    transform: scale(1.2); /* Hover durumunda büyütme efekti */
-    color: #ffd700; /* Renk değişimi (altın sarısı gibi) */ 
+    transform: scale(1.2); 
+    color: #007bff; 
 }
 
-/* Sosyal medya ikonlarına hover efekti ekle */
+
 footer .col-md-3 a i {
-    transition: transform 0.3s ease, color 0.3s ease; /* Hover geçiş efekti */
+    transition: transform 0.3s ease, color 0.3s ease; 
 }
 
 footer .col-md-3 a:hover i {
-    transform: scale(1.2); /* Hover durumunda büyütme efekti */
-    color: #ffd700; /* Renk değişimi (altın sarısı gibi) */
+    transform: scale(1.2); 
+    color: #007bff; 
 }
 footer h5 {
     font-family: 'Roboto', sans-serif;
@@ -54,7 +54,7 @@ footer .col-md-3 a {
 
 footer .col-md-3 a:hover i {
     transform: scale(1.2);
-    color: #ffd700;
+    color: #007bff;
 }
 footer .text-center {
     border-top: 1px solid #444444;
@@ -75,4 +75,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
+.text-white:hover{
+    color:#007bff;
+}
   

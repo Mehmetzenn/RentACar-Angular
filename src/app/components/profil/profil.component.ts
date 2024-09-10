@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/models/user';
-import { AuthService } from 'src/app/services/auth.service';
-import { CustomerService } from 'src/app/services/customer.service';
-import { UserService } from 'src/app/services/user.service';
-
 
 @Component({
   selector: 'app-profil',
@@ -18,73 +9,40 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./profil.component.css'],
 })
 export class ProfilComponent implements OnInit {
-  profileForm: FormGroup;
-  customerForm: FormGroup;
-  email: string;
-  password: FormControl;
-  user: User = new User();
+  user: User;
   status: string;
 
   constructor(
-    private userService: UserService,
-    private formBuilder: FormBuilder,
-    private toastrService: ToastrService,
-    private customerService: CustomerService,
-    private authService: AuthService
-  ) {}
+    private authService: AuthService,
+    private toastrService: ToastrService
+  ) { }
 
   ngOnInit(): void {
-    this.createProfileAddForm();
-    this.email = localStorage.getItem('email');
-    this.getUser();
+    this.getUser(); // Sayfa yüklendiğinde kullanıcı bilgilerini getir
   }
 
-  createProfileAddForm() {
-    this.profileForm = this.formBuilder.group({
-      id: this.user.id,
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-      status: true,
-    });
-  }
-  createCustomerForm() {
-    this.customerForm = this.formBuilder.group({
-      companyName: ['', Validators.required],
-    });
+  getUser() {
+    console.log("Kullanıcı bilgileri isteniyor...");
+    
+    this.authService.getUserById().subscribe(
+      (response) => {
+        console.log('API Yanıtı:', response);
+
+        // Yanıt yapısını kontrol etmek için log
+        console.log('API Yanıtı Data:', response.data);
+        
+        if (response.success) {  // Eğer API yanıtı başarılıysa
+          this.user = response.data;  // response.data içindeki kullanıcı bilgilerini al
+          this.status = this.user.status ? 'Aktif' : 'Aktif değil';
+        } else {
+          this.toastrService.error('Kullanıcı bilgileri alınamadı.');
+        }
+      },
+      (error) => {
+        console.log('API Hatası:', error);
+        this.toastrService.error('Kullanıcı bilgileri alınamadı.');
+      }
+    );
   }
   
-  getUser() {
-    if (this.email) {
-      this.userService.getByEmail(this.email).subscribe(
-        (response) => {
-          this.user = response;
-          if (response.status) {
-            this.status = 'Aktif';
-          } else {
-            this.status = 'Aktif değil';
-          }
-        },
-        (responseError) => {
-          this.toastrService.error(responseError.error);
-        }
-      );
-    }
-  }
-  updateProfile() {
-    if (this.profileForm.valid) {
-      let profileModel = Object.assign({}, this.profileForm.value);
-      this.userService.profileUpdate(profileModel).subscribe(
-        (response) => {
-          this.toastrService.success(response.message);
-        },
-        (responseError) => {
-          this.toastrService.error(responseError.error);
-        }
-      );
-    } else {
-      this.toastrService.error('Formu Boş Bıraktınız');
-    }
-  }
 }

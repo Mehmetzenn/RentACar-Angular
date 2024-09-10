@@ -1,7 +1,6 @@
-<div *ngIf="carImages.length > 0">
-    <img *ngFor="let carImage of carImages" style=" padding-top: 2%; width: 50%; height: 50%;" [src]="baseUrl + carImage.imagePath" alt="Car Image" class="car-image">
-  </div>
-  <div *ngIf="carImages.length === 0">
-    <p>Resim bulunamadı.</p>
-  </div>
-  
+<div *ngIf="carImages.length > 0" class="car-images-gallery">
+  <img *ngFor="let carImage of carImages" [src]="baseUrl + carImage.imagePath" alt="Car Image" class="car-image">
+</div>
+<div *ngIf="carImages.length === 0" class="no-images-message">
+  <p>Resim bulunamadı.</p>
+</div>
